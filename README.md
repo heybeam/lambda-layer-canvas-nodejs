@@ -24,6 +24,7 @@ docker run -it amazonlinux:latest /bin/bash
 
 ```
 > yum install git -y
+> cd home
 > git clone <this-repo>
 > cd <repo>
 > ./setup-env.sh
@@ -35,9 +36,10 @@ docker run -it amazonlinux:latest /bin/bash
 ```
 # get the container ID
 > docker ps
-# get the container ID
 > docker cp <container-id>:/home/lambda-layer-canvas-nodejs .
 ```
+
+6. Upload your layer to AWS
 
 ## About node-canvas
 
