@@ -12,9 +12,11 @@ if [ -n "$(find . -name 'canvas-nodejs_v*.zip')" ]; then
 fi
 
 # Clean and prepare Node.js modules and dependencies
+mkdir -p lib
 if [ "$(ls -A lib)" ]; then
     rm lib/*
 fi
+mkdir -p nodejs
 cd nodejs
 rm -rf node_modules package*.json ../package-lock.json
 npm init -y

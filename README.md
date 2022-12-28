@@ -23,12 +23,12 @@ docker run -it amazonlinux:latest /bin/bash
 4. Inside the container:
 
 ```
-> yum install git -y
-> cd home
-> git clone <this-repo>
-> cd <repo>
-> ./setup-env.sh
-> ./build-layer.sh
+bash-4.2# yum install git -y
+bash-4.2# cd home/
+bash-4.2# git clone https://github.com/heybeam/lambda-layer-canvas-nodejs.git
+bash-4.2# cd lambda-layer-canvas-nodejs
+bash-4.2# ./setup-env.sh
+bash-4.2# ./build-layer.sh
 ```
 
 5. Copy the layer zip from the docker container instance to your local machine:
