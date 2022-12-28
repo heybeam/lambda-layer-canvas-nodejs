@@ -31,13 +31,12 @@ rm -rf node_modules package*.json ../package-lock.json
 npm init -y
 npm install canvas --build-from-source
 npm install fabric
-npm install konva
 npm install mocha --save-dev
 jq --arg LAYER_NAME "$LAYER_NAME" --arg LAYER_DESCRIPTION "$LAYER_DESCRIPTION" --arg LAYER_VERSION "$LAYER_VERSION" --arg LAYER_AUTHOR "$LAYER_AUTHOR" '.name = $LAYER_NAME | .description = $LAYER_DESCRIPTION | .version = $LAYER_VERSION | .license = "MIT" | .author = $LAYER_AUTHOR | .scripts.test = "mocha"' package.json > package-tmp.json
 mv -f package-tmp.json package.json
 
 # Test if installed modules and dependencies work fine
-npm test
+#npm test
 cp package-lock.json ..
 
 # Prepare and package layer
