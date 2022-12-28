@@ -1,10 +1,9 @@
 # Canvas Layer for AWS Lambda
 
-![GitHub](https://img.shields.io/github/license/charoitel/lambda-layer-canvas-nodejs) Forked from [charoitel/lambda-layer-canvas-nodejs](https://github.com/charoitel/lambda-layer-canvas-nodejs)
+![GitHub](https://img.shields.io/github/license/charoitel/lambda-layer-canvas-nodejs)
+Forked from [charoitel/lambda-layer-canvas-nodejs](https://github.com/charoitel/lambda-layer-canvas-nodejs)
 
-## About node-canvas
-
-[node-canvas](https://github.com/Automattic/node-canvas) is a Cairo backed Canvas implementation for Node.js. It implements the [Mozilla Web Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) as closely as possible. For the current API compliance, please check [Compatibility Status](https://github.com/Automattic/node-canvas/wiki/Compatibility-Status).
+Since AWS Lambda is a secure and isolated runtime and execution environment, this layer aims to target AWS Lambda compatible build. As there are canvas libraries and frameworks relying on node-canvas running on Node.js runtime, this layer also tries to include and support these libraries and frameworks.
 
 ## How this layer is built?
 
@@ -14,7 +13,43 @@ The Lambda Layer is built from source of node-canvas npm package on [amazonlinux
 gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel librsvg2-devel pango-devel bzip2-devel jq python3
 ```
 
-Since AWS Lambda is a secure and isolated runtime and execution environment, this layer aims to target AWS Lambda compatible build. As there are canvas libraries and frameworks relying on node-canvas running on Node.js runtime, this layer also tries to include and support these libraries and frameworks.
+## How to build this layer:
+
+1. Download [Docker](https://www.docker.com/)
+2. Pull the [amazonlinux](https://hub.docker.com/_/amazonlinux) image
+
+```
+docker pull amazonlinux
+```
+
+3. Run the docker instance
+
+```
+docker run -it amazonlinux:latest /bin/bash
+```
+
+4. Inside the container:
+
+```
+> yum install git -y
+> git clone <this-repo>
+> cd <repo>
+> ./setup-env.sh
+> ./build-layer.sh
+```
+
+5. Copy the layer zip from the docker container instance to your local machine:
+
+```
+# get the container ID
+> docker ps
+# get the container ID
+> docker cp <container-id>:/home/lambda-layer-canvas-nodejs .
+```
+
+## About node-canvas
+
+[node-canvas](https://github.com/Automattic/node-canvas) is a Cairo backed Canvas implementation for Node.js. It implements the [Mozilla Web Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) as closely as possible. For the current API compliance, please check [Compatibility Status](https://github.com/Automattic/node-canvas/wiki/Compatibility-Status).
 
 ### Fabric.js support
 
