@@ -28,7 +28,9 @@ bash-4.2# cd home/
 bash-4.2# git clone https://github.com/heybeam/lambda-layer-canvas-nodejs.git
 bash-4.2# cd lambda-layer-canvas-nodejs
 bash-4.2# ./setup-env.sh
+bash-4.2# source ~/.bashrc
 bash-4.2# ./build-layer.sh
+bash-4.2# exit
 ```
 
 5. Copy the layer zip from the docker container instance to your local machine:
@@ -36,7 +38,7 @@ bash-4.2# ./build-layer.sh
 ```
 # get the container ID
 > docker ps
-> docker cp <container-id>:/home/lambda-layer-canvas-nodejs .
+> docker cp <container-id>:/home/lambda-layer-canvas-nodejs/canvas-nodejs_v2.11.0.zip .
 ```
 
 6. Upload your layer to AWS
