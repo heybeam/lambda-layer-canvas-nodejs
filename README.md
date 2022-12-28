@@ -1,6 +1,6 @@
 # Canvas Layer for AWS Lambda
 
-Forked from [charoitel/lambda-layer-canvas-nodejs](https://github.com/charoitel/lambda-layer-canvas-nodejs)
+Forked from [charoitel/lambda-layer-canvas-nodejs](https://github.com/charoitel/lambda-layer-canvas-nodejs) ![GitHub](https://img.shields.io/github/license/charoitel/lambda-layer-canvas-nodejs)
 
 ## About node-canvas
 
