@@ -5,14 +5,6 @@ Forked from [charoitel/lambda-layer-canvas-nodejs](https://github.com/charoitel/
 
 Since AWS Lambda is a secure and isolated runtime and execution environment, this layer aims to target AWS Lambda compatible build. As there are canvas libraries and frameworks relying on node-canvas running on Node.js runtime, this layer also tries to include and support these libraries and frameworks.
 
-## How this layer is built?
-
-The Lambda Layer is built from source of node-canvas npm package on [amazonlinux](https://hub.docker.com/_/amazonlinux) dev container instance, with following native dependencies installed. Please check `build-layer.sh` for details.
-
-```bash
-gcc-c++ cairo-devel pango-devel libjpeg-turbo-devel giflib-devel librsvg2-devel pango-devel bzip2-devel jq python3
-```
-
 ## How to build this layer:
 
 1. Download [Docker](https://www.docker.com/)
